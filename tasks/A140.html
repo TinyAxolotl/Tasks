@@ -1,0 +1,286 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body
+{
+    max-width:1000px;
+    font-family: 'Times New Roman';
+    padding: 30px;
+}
+
+.limits
+{
+    font-style: italic;
+}
+
+table.samples 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.samples td, table.samples th 
+{
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    min-width: 100px;
+    width: fit-content;
+}
+
+table.samples .explanation
+{
+    min-width: 450px;
+}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+			 
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () { 
+	$('.description').bind('cut copy paste', function (e) { 
+		e.preventDefault(); 
+	}); 
+	
+	$(".description").on("contextmenu", function(e){ 
+		return false; 
+	}); 
+});
+		</script>
+	</head>
+	<body>
+		<h1>
+			Варіант: A140
+		</h1>
+		<h2>
+			Текст (50 балів)
+		</h2>
+		<div class="limits">
+			Limits: 1 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Підрахуйте кількість слів у реченні, котрі задовольняють одночасно умови:<ul>
+					<li>
+						закінчується на 'A' (case-insensitive - великі та малі букви вважаються тією ж буквою)
+					</li>
+					<li>
+						є коротшими за 7 символів
+					</li>
+					<li>
+						містять подвоєння букви (комбінація великої та малої букви теж вважається подвоєнням)
+					</li>
+				</ul>
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			Єдиний рядок - речення англійськими літерами без розділових знаків, де слова розділені пробілами.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та шукану кількість слів.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			Довжина речення: до 100000 символів включно.<br />Текст складається виключно з літер англійського алфавіту (великих та малих), а також - пробілів.
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					This astonishing quiet audio is by ABBA and NOT by ABCBA or CBAAAAABC and for sure not ABCABCCBACBA
+				</td>
+				<td class="output">
+					A140 1
+				</td>
+				<td class="explanation">
+					Єдине слово задовольняє вимоги: ABBA
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Нумерологія (50 балів)
+		</h2>
+		<div class="limits">
+			Limits: 2 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Олена захоплюється нумерологією. Після довгих досліджень послідовності життєвих подій, вона зрозуміла, що найбільш щасливі числа, у котрих сума цифр у записі у 10-вій системі числення є меншою або рівною за 40. Вона розповіла про своє захоплення своїй подрузі Надії. Надія  зізналась, що теж має свої улюблені числа, - проте це числа, котрі мають більше дільників, ніж будь-яке менше додатнє число (1, 2, 4, 6, 12, 24, 36, ...). <br />Після нетривалих дискусій, чиї числа щасливіші, вони зрозуміли, що існують такі числа, котрі є щасливими для них обох! <br />Допоможіть знайти усі такі числа у діапазоні від a до b включно, та виведіть їх у порядку спадання.<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			В єдиному рядку - два цілі числа a i b, розділені пробілом - задають діапазон пошуку щасливих чисел.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та усі знайдені числа, розділені пробілами.<br />Якщо у вказаному діапазоні не знайдено жодного потрібного числа, - виведіть <b>Ваш номер варіанту</b> та слово '<b>none</b>'.<br />У випадку, якщо знайдених чисел більше, ніж 10_000, - припиніть виведення після такої кількості.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			1 <= a <= b <= 1_000_000
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					1 10
+				</td>
+				<td class="output">
+					A140 6 4 2 1
+				</td>
+				<td class="explanation">
+					Щасливі числа (кілька прикладів з поясненням):<ul>
+						<li>
+							6<ul>
+								<li>
+									Сума цифр 6 <= 40
+								</li>
+								<li>
+									Кількість дільників: 2.  Жодне менше число не має стільки дільників!
+								</li>
+							</ul>
+						</li>
+						<li>
+							4<ul>
+								<li>
+									Сума цифр 4 <= 40
+								</li>
+								<li>
+									Кількість дільників: 1.  Жодне менше число не має стільки дільників!
+								</li>
+							</ul>
+						</li>
+						<li>
+							2<ul>
+								<li>
+									Сума цифр 2 <= 40
+								</li>
+								<li>
+									Кількість дільників: 0. Проте, число 1 має більше дільників (0)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					Числа, що не є щасливими для когось: <ul>
+						<li>
+							3<ul>
+								<li>
+									Сума цифр 3 <= 40
+								</li>
+								<li>
+									Кількість дільників: 0. Проте, число 1 має більше дільників (0)
+								</li>
+							</ul>
+						</li>
+						<li>
+							5<ul>
+								<li>
+									Сума цифр 5 <= 40
+								</li>
+								<li>
+									Кількість дільників: 0. Проте, число 4 має більше дільників (1)
+								</li>
+							</ul>
+						</li>
+						<li>
+							7<ul>
+								<li>
+									Сума цифр 7 <= 40
+								</li>
+								<li>
+									Кількість дільників: 0. Проте, число 6 має більше дільників (2)
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					13 23
+				</td>
+				<td class="output">
+					A140 none
+				</td>
+				<td class="explanation">
+					Щасливих чисел у даному діапазоні немає.<br /><br />Числа, що не є щасливими для когось: <ul>
+						<li>
+							13<ul>
+								<li>
+									Сума цифр 4 <= 40
+								</li>
+								<li>
+									Кількість дільників: 0. Проте, число 12 має більше дільників (4)
+								</li>
+							</ul>
+						</li>
+						<li>
+							14<ul>
+								<li>
+									Сума цифр 5 <= 40
+								</li>
+								<li>
+									Кількість дільників: 2. Проте, число 12 має більше дільників (4)
+								</li>
+							</ul>
+						</li>
+						<li>
+							15<ul>
+								<li>
+									Сума цифр 6 <= 40
+								</li>
+								<li>
+									Кількість дільників: 2. Проте, число 12 має більше дільників (4)
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

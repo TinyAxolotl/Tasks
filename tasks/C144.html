@@ -1,0 +1,213 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body
+{
+    max-width:1000px;
+    font-family: 'Times New Roman';
+    padding: 30px;
+}
+
+.limits
+{
+    font-style: italic;
+}
+
+table.samples 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.samples td, table.samples th 
+{
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    min-width: 100px;
+    width: fit-content;
+}
+
+table.samples .explanation
+{
+    min-width: 450px;
+}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+			 
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () { 
+	$('.description').bind('cut copy paste', function (e) { 
+		e.preventDefault(); 
+	}); 
+	
+	$(".description").on("contextmenu", function(e){ 
+		return false; 
+	}); 
+});
+		</script>
+	</head>
+	<body>
+		<h1>
+			Варіант: C144
+		</h1>
+		<h2>
+			Текст (25 балів)
+		</h2>
+		<div class="limits">
+			Limits: 1 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Підрахуйте кількість слів у реченні, котрі містить 'ABC' (case-insensitive - великі та малі букви вважаються тією ж буквою).<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			Єдиний рядок - речення англійськими літерами без розділових знаків, де слова розділені пробілами.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та шукану кількість слів.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			Довжина речення: до 100000 символів включно.<br />Текст складається виключно з літер англійського алфавіту (великих та малих), а також - пробілів.
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					ABCAAAAACBA and CBAABC are simple palindromes while AAABC and ABCAA are not
+				</td>
+				<td class="output">
+					C144 4
+				</td>
+				<td class="explanation">
+					Слова, що задовольняють вимоги: ABCAAAAACBA, CBAABC, AAABC, ABCAA
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Нумерологія (25 балів)
+		</h2>
+		<div class="limits">
+			Limits: 2 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Данило захоплюється нумерологією. Після довгих досліджень послідовності життєвих подій, він зрозумів, що найбільш щасливі числа, котрі мають принаймні 5 бітів '1' у бінарному записі. <br />Допоможіть знайти усі такі числа у діапазоні від a до b включно, та виведіть їх у порядку зростання.<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			В єдиному рядку - два цілі числа a i b, розділені пробілом - задають діапазон пошуку щасливих чисел.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та усі знайдені числа, розділені пробілами.<br />Якщо у вказаному діапазоні не знайдено жодного потрібного числа, - виведіть <b>Ваш номер варіанту</b> та слово '<b>none</b>'.<br />У випадку, якщо знайдених чисел більше, ніж 10_000, - припиніть виведення після такої кількості.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			1 <= a <= b <= 1_000_000
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					60 70
+				</td>
+				<td class="output">
+					C144 61 62 63
+				</td>
+				<td class="explanation">
+					Щасливі числа :<ul>
+						<li>
+							61 У бінарному записі (111101) містить 5 бітів зі значенням '1' (>=5)
+						</li>
+						<li>
+							62 У бінарному записі (111110) містить 5 бітів зі значенням '1' (>=5)
+						</li>
+						<li>
+							63 У бінарному записі (111111) містить 6 бітів зі значенням '1' (>=5)
+						</li>
+					</ul>
+					Числа, що не є щасливими для когось: <ul>
+						<li>
+							60 У бінарному записі (111100) містить 4 біти зі значенням '1' (<5)
+						</li>
+						<li>
+							64 У бінарному записі (1000000) містить 1 біт зі значенням '1' (<5)
+						</li>
+						<li>
+							65 У бінарному записі (1000001) містить 2 біти зі значенням '1' (<5)
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					10 20
+				</td>
+				<td class="output">
+					C144 none
+				</td>
+				<td class="explanation">
+					Щасливих чисел у даному діапазоні немає.<br /><br />Числа, що не є щасливими для когось: <ul>
+						<li>
+							10 У бінарному записі (1010) містить 2 біти зі значенням '1' (<5)
+						</li>
+						<li>
+							11 У бінарному записі (1011) містить 3 біти зі значенням '1' (<5)
+						</li>
+						<li>
+							12 У бінарному записі (1100) містить 2 біти зі значенням '1' (<5)
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

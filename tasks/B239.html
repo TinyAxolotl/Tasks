@@ -1,0 +1,283 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body
+{
+    max-width:1000px;
+    font-family: 'Times New Roman';
+    padding: 30px;
+}
+
+.limits
+{
+    font-style: italic;
+}
+
+table.samples 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.samples td, table.samples th 
+{
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    min-width: 100px;
+    width: fit-content;
+}
+
+table.samples .explanation
+{
+    min-width: 450px;
+}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+			 
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () { 
+	$('.description').bind('cut copy paste', function (e) { 
+		e.preventDefault(); 
+	}); 
+	
+	$(".description").on("contextmenu", function(e){ 
+		return false; 
+	}); 
+});
+		</script>
+	</head>
+	<body>
+		<h1>
+			Варіант: B239
+		</h1>
+		<h2>
+			Текст (36 балів)
+		</h2>
+		<div class="limits">
+			Limits: 1 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Підрахуйте кількість слів у реченні, котрі задовольняють одночасно умови:<ul>
+					<li>
+						закінчується на 'ABC' (case-insensitive - великі та малі букви вважаються тією ж буквою)
+					</li>
+					<li>
+						починаються з великої літери
+					</li>
+				</ul>
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			Єдиний рядок - речення англійськими літерами без розділових знаків, де слова розділені пробілами.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та шукану кількість слів.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			Довжина речення: до 100000 символів включно.<br />Текст складається виключно з літер англійського алфавіту (великих та малих), а також - пробілів.
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					English alphabet is often called just ABC and children learn it via song ABCABCABC
+				</td>
+				<td class="output">
+					B239 2
+				</td>
+				<td class="explanation">
+					Слова, що задовольняють вимоги: ABC, ABCABCABC
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Нумерологія (35 балів)
+		</h2>
+		<div class="limits">
+			Limits: 2 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Роман захоплюється нумерологією. Після довгих досліджень послідовності життєвих подій, він зрозумів, що найбільш щасливі числа, котрі мають більше непарних цифр, ніж парних. Він розповів про своє захоплення своєму другові Сергію. Сергій  зізнався, що теж має свої улюблені числа, - проте це числа, котрі є степенем (мінімум квадратом) певного числа (наприклад, 32 є 5м степерем двійки, 81 є 4м степенем трійки, 25 є 2м степерем п'ятірки і т.д.). <br />Після нетривалих дискусій, чиї числа щасливіші, вони зрозуміли, що існують такі числа, котрі є щасливими для них обох! <br />Допоможіть знайти усі такі числа у діапазоні від a до b включно, та виведіть їх у порядку спадання.<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			В єдиному рядку - два цілі числа a i b, розділені пробілом - задають діапазон пошуку щасливих чисел.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та усі знайдені числа, розділені пробілами.<br />Якщо у вказаному діапазоні не знайдено жодного потрібного числа, - виведіть <b>Ваш номер варіанту</b> та слово '<b>none</b>'.<br />У випадку, якщо знайдених чисел більше, ніж 10_000, - припиніть виведення після такої кількості.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			1 <= a <= b <= 1_000_000
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					100 200
+				</td>
+				<td class="output">
+					B239 196 169 125 121
+				</td>
+				<td class="explanation">
+					Щасливі числа (кілька прикладів з поясненням):<ul>
+						<li>
+							196<ul>
+								<li>
+									Число складається із 2 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									= 14 в степені 2
+								</li>
+							</ul>
+						</li>
+						<li>
+							169<ul>
+								<li>
+									Число складається із 2 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									= 13 в степені 2
+								</li>
+							</ul>
+						</li>
+						<li>
+							125<ul>
+								<li>
+									Число складається із 2 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									= 5 в степені 3
+								</li>
+							</ul>
+						</li>
+					</ul>
+					Числа, що не є щасливими для когось: <ul>
+						<li>
+							100<ul>
+								<li>
+									Число складається із 1 непарних цифр та 2 парних цифр
+								</li>
+								<li>
+									= 10 в степені 2
+								</li>
+							</ul>
+						</li>
+						<li>
+							101<ul>
+								<li>
+									Число складається із 2 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									Не є степенем жодного числа
+								</li>
+							</ul>
+						</li>
+						<li>
+							102<ul>
+								<li>
+									Число складається із 1 непарних цифр та 2 парних цифр
+								</li>
+								<li>
+									Не є степенем жодного числа
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					10 20
+				</td>
+				<td class="output">
+					B239 none
+				</td>
+				<td class="explanation">
+					Щасливих чисел у даному діапазоні немає.<br /><br />Числа, що не є щасливими для когось: <ul>
+						<li>
+							10<ul>
+								<li>
+									Число складається із 1 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									Не є степенем жодного числа
+								</li>
+							</ul>
+						</li>
+						<li>
+							11<ul>
+								<li>
+									Число складається із 2 непарних цифр та 0 парних цифр
+								</li>
+								<li>
+									Не є степенем жодного числа
+								</li>
+							</ul>
+						</li>
+						<li>
+							12<ul>
+								<li>
+									Число складається із 1 непарних цифр та 1 парних цифр
+								</li>
+								<li>
+									Не є степенем жодного числа
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

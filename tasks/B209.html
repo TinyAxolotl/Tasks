@@ -1,0 +1,310 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body
+{
+    max-width:1000px;
+    font-family: 'Times New Roman';
+    padding: 30px;
+}
+
+.limits
+{
+    font-style: italic;
+}
+
+table.samples 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.samples td, table.samples th 
+{
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    min-width: 100px;
+    width: fit-content;
+}
+
+table.samples .explanation
+{
+    min-width: 450px;
+}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+			 
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () { 
+	$('.description').bind('cut copy paste', function (e) { 
+		e.preventDefault(); 
+	}); 
+	
+	$(".description").on("contextmenu", function(e){ 
+		return false; 
+	}); 
+});
+		</script>
+	</head>
+	<body>
+		<h1>
+			Варіант: B209
+		</h1>
+		<h2>
+			Текст (36 балів)
+		</h2>
+		<div class="limits">
+			Limits: 1 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Підрахуйте кількість слів у реченні, котрі задовольняють одночасно умови:<ul>
+					<li>
+						закінчується на 'A' (case-insensitive - великі та малі букви вважаються тією ж буквою)
+					</li>
+					<li>
+						містять подвоєння букви (комбінація великої та малої букви теж вважається подвоєнням)
+					</li>
+				</ul>
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			Єдиний рядок - речення англійськими літерами без розділових знаків, де слова розділені пробілами.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та шукану кількість слів.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			Довжина речення: до 100000 символів включно.<br />Текст складається виключно з літер англійського алфавіту (великих та малих), а також - пробілів.
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					This astonishing quiet audio is by ABBA and NOT by ABCBA or CBAAAAABC and for sure not ABCABCCBACBA
+				</td>
+				<td class="output">
+					B209 2
+				</td>
+				<td class="explanation">
+					Слова, що задовольняють вимоги: ABBA, ABCABCCBACBA
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Нумерологія (35 балів)
+		</h2>
+		<div class="limits">
+			Limits: 2 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Анна захоплюється нумерологією. Після довгих досліджень послідовності життєвих подій, вона зрозуміла, що найбільш щасливі числа, у котрих сума цифр у записі у 16-вій системі числення є меншою або рівною за 50. Вона розповіла про своє захоплення своїй подрузі Олені. Олена  зізналась, що теж має свої улюблені числа, - проте це числа, котрі є паліндромом у 10-вій системі числення (при читанні справа наліво вийде те ж число - наприклад 25352). Разом вони вирішили довідатись, хто іще серед їхніх друзів має таке хобі, щоб організувати клуб нумерологів-аматорів. Данило наполягав, що його щасливі числа - це непарні числа. <br />На першому засіданні клубу після нетривалих дискусій, чиї числа щасливіші, вони зрозуміли, що існують такі числа, котрі є щасливими для них усіх! <br />Допоможіть знайти усі такі числа у діапазоні від a до b включно, та виведіть їх у порядку зростання.<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			В єдиному рядку - два цілі числа a i b, розділені пробілом - задають діапазон пошуку щасливих чисел.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та усі знайдені числа, розділені пробілами.<br />Якщо у вказаному діапазоні не знайдено жодного потрібного числа, - виведіть <b>Ваш номер варіанту</b> та слово '<b>none</b>'.<br />У випадку, якщо знайдених чисел більше, ніж 10_000, - припиніть виведення після такої кількості.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			1 <= a <= b <= 1_000_000
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					1 10
+				</td>
+				<td class="output">
+					B209 1 3 5 7 9
+				</td>
+				<td class="explanation">
+					Щасливі числа (кілька прикладів з поясненням):<ul>
+						<li>
+							1<ul>
+								<li>
+									=1 у 16-вій системі числення. Сума цифр 1 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є непарним
+								</li>
+							</ul>
+						</li>
+						<li>
+							3<ul>
+								<li>
+									=3 у 16-вій системі числення. Сума цифр 3 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є непарним
+								</li>
+							</ul>
+						</li>
+						<li>
+							5<ul>
+								<li>
+									=5 у 16-вій системі числення. Сума цифр 5 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є непарним
+								</li>
+							</ul>
+						</li>
+					</ul>
+					Числа, що не є щасливими для когось: <ul>
+						<li>
+							2<ul>
+								<li>
+									=2 у 16-вій системі числення. Сума цифр 2 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є парним
+								</li>
+							</ul>
+						</li>
+						<li>
+							4<ul>
+								<li>
+									=4 у 16-вій системі числення. Сума цифр 4 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є парним
+								</li>
+							</ul>
+						</li>
+						<li>
+							6<ul>
+								<li>
+									=6 у 16-вій системі числення. Сума цифр 6 <= 50
+								</li>
+								<li>
+									є паліндромом
+								</li>
+								<li>
+									Є парним
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					12 22
+				</td>
+				<td class="output">
+					B209 none
+				</td>
+				<td class="explanation">
+					Щасливих чисел у даному діапазоні немає.<br /><br />Числа, що не є щасливими для когось: <ul>
+						<li>
+							12<ul>
+								<li>
+									=C у 16-вій системі числення. Сума цифр 12 <= 50
+								</li>
+								<li>
+									не є паліндромом
+								</li>
+								<li>
+									Є парним
+								</li>
+							</ul>
+						</li>
+						<li>
+							13<ul>
+								<li>
+									=D у 16-вій системі числення. Сума цифр 13 <= 50
+								</li>
+								<li>
+									не є паліндромом
+								</li>
+								<li>
+									Є непарним
+								</li>
+							</ul>
+						</li>
+						<li>
+							14<ul>
+								<li>
+									=E у 16-вій системі числення. Сума цифр 14 <= 50
+								</li>
+								<li>
+									не є паліндромом
+								</li>
+								<li>
+									Є парним
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,224 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body
+{
+    max-width:1000px;
+    font-family: 'Times New Roman';
+    padding: 30px;
+}
+
+.limits
+{
+    font-style: italic;
+}
+
+table.samples 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.samples td, table.samples th 
+{
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    min-width: 100px;
+    width: fit-content;
+}
+
+table.samples .explanation
+{
+    min-width: 450px;
+}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+			 
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () { 
+	$('.description').bind('cut copy paste', function (e) { 
+		e.preventDefault(); 
+	}); 
+	
+	$(".description").on("contextmenu", function(e){ 
+		return false; 
+	}); 
+});
+		</script>
+	</head>
+	<body>
+		<h1>
+			Варіант: C170
+		</h1>
+		<h2>
+			Текст (25 балів)
+		</h2>
+		<div class="limits">
+			Limits: 1 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Підрахуйте кількість слів у реченні, котрі закінчується на 'A' (case-insensitive - великі та малі букви вважаються тією ж буквою).<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			Єдиний рядок - речення англійськими літерами без розділових знаків, де слова розділені пробілами.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та шукану кількість слів.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			Довжина речення: до 100000 символів включно.<br />Текст складається виключно з літер англійського алфавіту (великих та малих), а також - пробілів.
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					This astonishing quiet audio is by ABBA and NOT by ABCBA or CBAAAAABC and for sure not ABCABCCBACBA
+				</td>
+				<td class="output">
+					C170 3
+				</td>
+				<td class="explanation">
+					Слова, що задовольняють вимоги: ABBA, ABCBA, ABCABCCBACBA
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					Aoxomoxoa is an album by the Grateful Dead
+				</td>
+				<td class="output">
+					C170 1
+				</td>
+				<td class="explanation">
+					Єдине слово задовольняє вимоги: Aoxomoxoa
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Нумерологія (25 балів)
+		</h2>
+		<div class="limits">
+			Limits: 2 sec., 256 MiB
+		</div>
+		<div class="description">
+			<p>
+				Тарас захоплюється нумерологією. Після довгих досліджень послідовності життєвих подій, він зрозумів, що найбільш щасливі числа, котрі містять цифру 7 у записі у вісімковій системі числення. <br />Допоможіть знайти усі такі числа у діапазоні від a до b включно, та виведіть їх у порядку зростання.<br />
+			</p>
+		</div>
+		<h3>
+			Ввід
+		</h3>
+		<div class="description input">
+			В єдиному рядку - два цілі числа a i b, розділені пробілом - задають діапазон пошуку щасливих чисел.
+		</div>
+		<h3>
+			Вивід
+		</h3>
+		<div class="description output">
+			В єдиному рядку виведіть <b>Ваш номер варіанту</b> та усі знайдені числа, розділені пробілами.<br />Якщо у вказаному діапазоні не знайдено жодного потрібного числа, - виведіть <b>Ваш номер варіанту</b> та слово '<b>none</b>'.<br />У випадку, якщо знайдених чисел більше, ніж 10_000, - припиніть виведення після такої кількості.
+		</div>
+		<h3>
+			Обмеження
+		</h3>
+		<div class="description constraints">
+			1 <= a <= b <= 1_000_000
+		</div>
+		<h3>
+			Приклади
+		</h3>
+		<table class="samples">
+			<tr>
+				<th class="input">
+					Ввід
+				</th>
+				<th class="output">
+					Вивід
+				</th>
+				<th class="explanation">
+					Пояснення
+				</th>
+			</tr>
+			<tr>
+				<td class="input">
+					50 60
+				</td>
+				<td class="output">
+					C170 55 56 57 58 59 60
+				</td>
+				<td class="explanation">
+					Щасливі числа (кілька прикладів з поясненням):<ul>
+						<li>
+							55 У вісімковій системі числення - '67' містить цифру 7
+						</li>
+						<li>
+							56 У вісімковій системі числення - '70' містить цифру 7
+						</li>
+						<li>
+							57 У вісімковій системі числення - '71' містить цифру 7
+						</li>
+					</ul>
+					Числа, що не є щасливими для когось: <ul>
+						<li>
+							50 У вісімковій системі числення - '62' не містить цифри 7
+						</li>
+						<li>
+							51 У вісімковій системі числення - '63' не містить цифри 7
+						</li>
+						<li>
+							52 У вісімковій системі числення - '64' не містить цифри 7
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="input">
+					16 22
+				</td>
+				<td class="output">
+					C170 none
+				</td>
+				<td class="explanation">
+					Щасливих чисел у даному діапазоні немає.<br /><br />Числа, що не є щасливими для когось: <ul>
+						<li>
+							16 У вісімковій системі числення - '20' не містить цифри 7
+						</li>
+						<li>
+							17 У вісімковій системі числення - '21' не містить цифри 7
+						</li>
+						<li>
+							18 У вісімковій системі числення - '22' не містить цифри 7
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
