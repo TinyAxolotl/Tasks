@@ -1,0 +1,56 @@
+{
+  "test_suite": "B142 - Text Processing Task",
+  "description": "Count words containing letter A and having more vowels than consonants",
+  "test_cases": [
+    {
+      "name": "Example from problem 1",
+      "input": "ABCAAAAACBA and CBAABC are simple palindromes while AAABC and ABCAA are not",
+      "expected": "B142 5"
+    },
+    {
+      "name": "Example from problem 2",
+      "input": "Aoxomoxoa is an album by the Grateful Dead",
+      "expected": "B142 1"
+    },
+    {
+      "name": "Empty string",
+      "input": "",
+      "expected": "B142 0"
+    },
+    {
+      "name": "No words with A",
+      "input": "Hello world this is test",
+      "expected": "B142 0"
+    },
+    {
+      "name": "Words with A but more consonants",
+      "input": "cat bat plant grand",
+      "expected": "B142 0"
+    },
+    {
+      "name": "All words match criteria",
+      "input": "AAA AEIO AUOIE",
+      "expected": "B142 3"
+    },
+    {
+      "name": "Case insensitive test",
+      "input": "aaa AaA aAa",
+      "expected": "B142 3"
+    },
+    {
+      "name": "Mixed case with various patterns",
+      "input": "Apple Banana Orange Avocado Grape",
+      "expected": "B142 1"
+    },
+    {
+      "name": "Single character words",
+      "input": "A B C a e i o u",
+      "expected": "B142 2"
+    },
+    {
+      "name": "Complex sentence",
+      "input": "Amazing achievements are always appreciated by audiences",
+      "expected": "B142 2"
+    }
+  ]
+}
